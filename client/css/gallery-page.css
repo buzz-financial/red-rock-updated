@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: #f9f9f9;
   color: #333;
+  overflow-x: hidden;
 }
 
 a {
@@ -39,6 +40,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -89,11 +91,20 @@ a {
 /* Responsive */
 @media screen and (max-width: 768px) {
   /* make sure the toggle sits on top of everything */
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-container {
+    padding: 0 3.5rem 0 0.5rem;
+  }
+
   .menu-toggle {
     display: flex;
     position: absolute;
-    /* top: 1rem; */
+    top: 50%;
     right: 1rem;
+    transform: translateY(-50%);
     z-index: 60;
   }
 
@@ -108,7 +119,7 @@ a {
   .nav-links {
     list-style: none;
     position: fixed;
-    top: -16px; /* pinned to top */
+    top: 0;
     right: 0;
     height: 100vh;
     width: 80%;
@@ -197,6 +208,10 @@ main {
   margin: 0;
 }
 
+.album {
+  padding: 1rem 0 2rem;
+}
+
 /* === Body Content === */
 .album .responsive-container-block {
   min-height: 75px;
@@ -212,22 +227,29 @@ main {
   max-width: 1320px;
   margin: 0 auto;
   justify-content: space-between;
+  padding: 0.75rem;
+  gap: 1rem;
 }
 
 .album .img {
   width: 100%;
   margin: 0 0 20px 0;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .album .responsive-container-block.img-cont {
+  display: flex;
   flex-direction: column;
   max-width: 33.3%;
   height: 100%;
+  gap: 1rem;
 }
 
 .album .img.img-big {
-  height: 50%;
-  margin: 0 0 16px 0;
+  height: auto;
+  margin: 0;
 }
 
 /* === Media Queries for Responsive Design === */
@@ -238,6 +260,23 @@ main {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 320px;
+  }
+
+  .about-us {
+    padding: 3rem 1rem;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
   .album .img {
     max-width: 32.5%;
     margin: 0 0 0 0;
@@ -259,23 +298,48 @@ main {
 }
 
 @media (max-width: 500px) {
+  .hero {
+    height: 280px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
   .album .img {
-    max-width: 94%;
-    margin: 0 0 25px 0;
+    max-width: 100%;
+    margin: 0;
   }
 
   .album .responsive-container-block.img-cont {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    gap: 14px;
   }
 
   .album .img.img-big {
-    max-width: 94%;
+    max-width: 100%;
   }
 
   .album .img.img-last {
-    margin: 0 0 5px 0;
+    margin: 0;
+  }
+
+  .about-us {
+    padding: 2.5rem 1rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-container {
+    gap: 1.5rem;
+  }
+
+  .map iframe {
+    height: 220px;
   }
 }
 

@@ -28,6 +28,8 @@
 
           <!-- Navigation Links -->
           <ul class="nav-links" id="nav-links">
+            <li><a href="#hours-locations">Hours</a></li>
+            <li><a href="#pricing-section">Pricing</a></li>
             <li><a href="client/html/gallery-page.html">Gallery</a></li>
           <!--  <li><a href="contact-form.html">Contact</a></li> -->
           </ul>
@@ -59,7 +61,7 @@
         </div>
       </section>
 
-      <section class="hours-locations">
+      <section id="hours-locations" class="hours-locations">
         <h1>HOURS</h1>
         <div class="locations-grid">
           <div class="location-card">
@@ -155,10 +157,37 @@
     <script>
       const toggle = document.getElementById("menu-toggle");
       const navbar = document.getElementById("navbar");
+      const navLinksList = document.getElementById("nav-links");
+      const navLinks = document.querySelectorAll("#nav-links a");
+
+      function closeMobileMenu() {
+        navbar.classList.remove("active");
+        toggle.classList.remove("open");
+      }
 
       toggle.addEventListener("click", () => {
         navbar.classList.toggle("active"); // slide the menu panel
         toggle.classList.toggle("open"); // morph burger ↔ X
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      window.addEventListener("scroll", () => {
+        if (navbar.classList.contains("active")) {
+          closeMobileMenu();
+        }
+      });
+
+      window.addEventListener("resize", closeMobileMenu);
+
+      document.addEventListener("click", (event) => {
+        const clickedInsideMenu = navbar.contains(event.target) || navLinksList.contains(event.target);
+
+        if (!clickedInsideMenu && navbar.classList.contains("active")) {
+          closeMobileMenu();
+        }
       });
     </script>
   </body>

@@ -36,6 +36,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -86,10 +87,16 @@ body {
 /* Responsive */
 @media screen and (max-width: 768px) {
   /* make sure the toggle sits on top of everything */
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
   .menu-toggle {
     display: flex;
     position: absolute;
+    top: 50%;
     right: 1rem;
+    transform: translateY(-50%);
     z-index: 60;
   }
 
@@ -97,7 +104,7 @@ body {
   .nav-links {
     list-style: none;
     position: fixed;
-    top: -16px; /* pinned to top */
+    top: 0;
     right: 0;
     height: 100vh;
     width: 80%;
@@ -249,6 +256,11 @@ body {
   gap: 2rem;
 }
 
+.sponsor-logos img {
+  width: clamp(150px, 14vw, 190px);
+  height: auto;
+}
+
 /* === Hours & Locations === */
 .hours-locations {
   background: #ea580c;
@@ -259,9 +271,9 @@ body {
 
 .locations-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-  max-width: 70%;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -490,39 +502,74 @@ footer {
 
 /* === Responsive Media Queries === */
 
-/* Small Screens */
-@media (max-width: 767px) {
-  .hero-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .hero-text h2 {
-    font-size: 3rem;
-    text-align: center;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-img {
-    max-width: 300px;
+@media (max-width: 1100px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+    max-width: 90%;
   }
 
   .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .price-card.center-column {
+    grid-column: span 2;
+  }
+
+  .footer-container {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 3.5rem 0 0.5rem;
+  }
+
+  #hero {
+    min-height: 70vh;
+  }
+
+  #hero .caption {
+    padding: 1rem 1.25rem;
+  }
+
+  #hero .caption h1 {
+    font-size: 2.2rem;
+  }
+
+  #hero .caption h2 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .sponsors,
+  .hours-locations,
+  .pricing {
+    padding: 3rem 1rem;
+  }
+
+  .sponsor-logos {
+    gap: 1.25rem;
+  }
+
+  .sponsor-logos img {
+    width: 96px;
+  }
+
+  .locations-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .price-card.center-column {
+    grid-column: auto;
   }
 
   .price-card {
-    margin-bottom: 2rem;
+    padding: 1.5rem;
   }
 
   .footer-container {
@@ -531,67 +578,46 @@ footer {
     gap: 2rem;
   }
 
-  .footer-maps {
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
+  .footer-image {
+    order: 1;
+  }
+
+  .footer-container .map:nth-child(1),
+  .footer-container .map:nth-child(3) {
+    order: 2;
   }
 
   .map {
-    min-width: auto;
-    max-width: 100%;
+    min-width: min(100%, 320px);
+    width: 100%;
+    max-width: 520px;
   }
 
   .map iframe {
-    height: 250px;
+    height: 220px;
   }
 }
 
-/* Medium Screens */
-@media (min-width: 768px) {
-  .hero-inner {
-    flex-direction: row;
-    justify-content: center;
-    text-align: left;
-    gap: 2rem;
+@media (max-width: 480px) {
+  .logo-img {
+    height: 50px;
   }
 
-  .hero-text h1 {
-    font-size: 4rem;
-    text-align: left;
+  #hero .caption h1 {
+    font-size: 1.8rem;
   }
 
-  .hero-text h2 {
-    font-size: 5rem;
-    text-align: left;
+  #hero .caption h2 {
+    font-size: 1.05rem;
   }
 
-  .locations-grid,
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Large Screens */
-@media (min-width: 1024px) {
-  .hero-inner {
-    gap: 4rem;
-    padding: 4rem 2rem;
+  .pricing h1,
+  .hours-locations h1,
+  .sponsors h1 {
+    font-size: 2rem;
   }
 
-  .hero-text h1 {
-    font-size: 5rem;
-  }
-
-  .hero-text h2 {
-    font-size: 6rem;
-  }
-
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr 1.2fr 1fr;
+  .map iframe {
+    height: 200px;
   }
 }
