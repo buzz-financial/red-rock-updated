@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/gallery-page.css">
+</head>
+<body>
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          
+          <!-- Logo -->
+          <a href="../../index.html" class="logo">
+            <img src="../images/redrockLogo.png" alt="Red Rock Country Swing Logo" class="logo-img">
+          </a>
+      
+          <!-- Hamburger Menu Toggle -->
+          <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      
+          <!-- Navigation Links -->
+          <ul class="nav-links" id="nav-links">
+            <li><a href="gallery-page.html">Gallery</a></li>
+          <!--  <li><a href="contact-form.html">Contact</a></li> -->
+          </ul>
+      
+        </div>
+      </nav>
+    
+      <main>
+        <section class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <div class="hero-inner">
+              <div class="hero-text">
+                <h1>GALLERY</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-us">
+          <div class="about-container">
+            <h2>About Us</h2>
+            <p>
+              At <strong>Red Rock Country Swing</strong>, we celebrate the joy of country swing dance by bringing people together through music, movement, and community. Whether you're a beginner taking your first step or a seasoned dancer looking to connect, our goal is to create an inclusive space full of laughter, rhythm, and unforgettable memories.
+            </p>
+            <p>
+              Based in the heart of Southern Utah, we host regular socials, lessons, and community events in both St. George and Washington. With passionate instructors and a welcoming vibe, Red Rock Country Swing is more than just dance — it's a lifestyle.
+            </p>
+          </div>
+        </section>
+        
+
+    <!-- Gallery -->
+    <div class="album">
+        <div class="responsive-container-block bg">
+          <div class="responsive-container-block img-cont">
+            <img class="img" src="../img_gallery/img5.jpg">
+            <img class="img" src="../img_gallery/img2.jpg">
+            <img class="img img-last" src="../img_gallery/img3.jpg">
+          </div>
+          <div class="responsive-container-block img-cont">
+            <img class="img img-big" src="../img_gallery/img4.jpg">
+            <img class="img img-big img-last" src="../img_gallery/img1.jpg">
+          </div>
+          <div class="responsive-container-block img-cont">
+            <img class="img" src="../img_gallery/img10.jpg">
+            <img class="img" src="../img_gallery/img7.jpg">
+            <img class="img" src="../img_gallery/img8.jpg">
+          </div>
+
+        </div>
+      </div>
+
+    <!-- Footer -->
+  
+      <footer id="footer">
+        <div class="footer-container">
+          <!-- Left Map -->
+          <div class="map">
+            <h3>Washington Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.9098975356783!2d-113.51597630000002!3d37.1310586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca5ba28b60bbcd%3A0x43bd4d43b4bdde68!2s25%20N%20300%20W%2C%20Washington%2C%20UT%2084780!5e0!3m2!1sen!2sus!4v1748964422831!5m2!1sen!2sus" width="300" height="200" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <!-- Center: Image and Contact Info -->
+          <div class="footer-image">
+            <img src="../images/redrockLogo.png" alt="Red Rock Country Swing" />
+            <div class="footer-contact">
+              <div class="contact-info">
+                <div>
+                  <a href="tel:(801) 419-9644"> <i class="material-icons">phone</i> (801) 419-9644 </a>
+                </div>
+
+                <div>
+                  <a href="mailto:rrcountryswing@gmail.com"> <i class="material-icons">email</i> rrcountryswing@gmail.com </a>
+                </div>
+
+                <div>
+                  <a href="https://www.instagram.com/redrockcountryswing" target="_blank" style="font-style: italic"> <i class="fab fa-instagram"></i> @redrockcountryswing </a>
+                </div>
+
+                <div>
+                  <a href="https://www.facebook.com/p/Red-Rock-Country-Swing-100086722062194/" target="_blank" style="font-style: italic"> <i class="fab fa-facebook-f"></i> @Red Rock Country Swing </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Map -->
+          <div class="map">
+            <h3>St. George Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.0121009998397!2d-113.6096551234684!3d37.08101867216849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca457d0271b977%3A0xe56a8ebde8fa7019!2s1094%20W%201600%20S%2C%20St.%20George%2C%20UT%2084770!5e0!3m2!1sen!2sus!4v1745003339028!5m2!1sen!2sus" width="300" height="200" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </footer>
+      <script>
+        const toggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        toggle.addEventListener('click', () => {
+          navbar.classList.toggle('active');  // slide the menu panel
+          toggle.classList.toggle('open');    // morph burger ↔ X
+        });
+    </script>
+</body>
+</html>

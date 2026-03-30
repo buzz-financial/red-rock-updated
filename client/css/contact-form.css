@@ -1,0 +1,468 @@
+/* === Global Reset === */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  padding: 1rem;
+  background: #fff;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ea580c;
+}
+
+/* Burger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  /* make sure the toggle sits on top of everything */
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    /* top: 1rem; */
+    right: 1rem;
+    z-index: 60;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #ea580c;
+    border-radius: 2px;
+  }
+
+  /* Slide-out panel */
+  .nav-links {
+    list-style: none;
+    position: fixed;
+    top: -16px; /* pinned to top */
+    right: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* stack from the top */
+    padding-top: 4rem; /* leave space for your toggle */
+    z-index: 50;
+  }
+
+  .nav-links li a:hover {
+    color: #ea580c;
+  }
+
+  /* when navbar has .active, slide in */
+  .navbar.active .nav-links {
+    transform: translateX(0);
+  }
+
+  /* full-width link hit area, left-aligned text */
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+  }
+  .nav-links li a {
+    color: #fff;
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  /* animate burger → X */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* === Hero Section === */
+main {
+  padding-top: 80px; /* adjust based on your navbar height */
+}
+
+.hero {
+  background-image: url("../images/contact-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* === Contact Container === */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  margin: 50px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.left-section,
+.right-section {
+  flex: 1 1 400px;
+  max-width: 450px;
+}
+
+.contact-section,
+#contact-details {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-section h2,
+#contact-details h2 {
+  color: #ea580c;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* === Contact Form === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: #ea580c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+}
+
+#form-status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: green;
+}
+
+/* === Contact Details === */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #ea580c;
+}
+
+.contact-info i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.address-list {
+  margin-top: 1rem;
+}
+
+.address-list div {
+  margin-bottom: 0.75rem;
+}
+
+.address-list a {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.address-list a:hover {
+  color: #ea580c;
+}
+
+/* === Footer === */
+footer {
+  background-color: #f8f8f8;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-image {
+  flex: 0 0 auto;
+  max-width: 250px;
+  text-align: center;
+}
+
+.footer-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info i {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ea580c;
+}
+
+.contact-info a:hover i {
+  transform: scale(1.1);
+}
+
+.footer-maps {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 700px;
+}
+
+.map {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.map h3 {
+  margin-bottom: 1rem;
+  color: #ea580c;
+  font-size: 1.1rem;
+}
+
+.map iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+}
+
+.footer-bottom {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-section,
+  .right-section {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-image {
+    text-align: center;
+  }
+
+  .footer-maps {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .map {
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .map iframe {
+    height: 250px;
+  }
+}

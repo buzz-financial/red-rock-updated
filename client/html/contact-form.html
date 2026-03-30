@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/contact-form.css">
+    <!-- EmailJS Script-->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      
+      <!-- Logo -->
+      <a href="../../index.html" class="logo">
+        <img src="../images/redrockLogo.png" alt="Red Rock Country Swing Logo" class="logo-img">
+      </a>
+  
+      <!-- Hamburger Menu Toggle -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="gallery-page.html">Gallery</a></li>
+        <li><a href="contact-form.html">Contact</a></li>
+      </ul>
+  
+    </div>
+  </nav>
+    
+      <main>
+        <section class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <div class="hero-inner">
+              <div class="hero-text">
+                <h1>CONTACT US</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <div class="contact-container">
+      <div class="left-section">
+        <section id="contact-form" class="contact-section">
+          <h2>Online Inquiry</h2>
+          <form id="contactForm" class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+        
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+        
+            <button type="submit">Send Message</button>
+            <p id="form-status"></p>
+          </form>
+      </section>
+      </div>
+  
+      <div class="right-section">
+        <section id="contact-details">
+          <h2>Contact Details</h2>
+          <div class="contact-info">
+            <div>
+              <a href="tel:(801) 419-9644">
+                <i class="material-icons">phone</i> (801) 419-9644
+              </a>
+            </div>
+            
+            <div>
+              <a href="mailto:rrcountryswing@gmail.com">
+                <i class="material-icons">email</i> rrcountryswing@gmail.com
+              </a>
+            </div>       
+  
+            <div>
+              <a href="https://www.instagram.com/redrockcountryswing" target="_blank" style="font-style: italic;">
+                <i class="fab fa-instagram"></i> @redrockcountryswing
+              </a>
+            </div> 
+  
+            <div>
+              <a href="https://www.facebook.com/p/Red-Rock-Country-Swing-100086722062194/" target="_blank" style="font-style: italic;">
+                <i class="fab fa-facebook-f"></i> @Red Rock Country Swing
+              </a>
+            </div> 
+          </div>
+          <h2>Locations</h2>
+          <div class="address-list">
+            <div>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=5015+S+Cattail+Road,+Washington,+UT+84780" target="_blank">
+                <i class="material-icons">location_on</i> 5015 S Cattail Road, Washington, UT 84780
+              </a>
+            </div> 
+            <div>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=1094+W+1600+S,+St.+George,+UT+84770" target="_blank">
+                <i class="material-icons">location_on</i> 1094 W 1600 S, St. George, UT 84770
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+ 
+      <footer id="footer">
+        <div class="footer-container">
+          <!-- Left Map -->
+          <div class="map">
+            <h3>Washington Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3180.9098975356783!2d-113.51597630000002!3d37.1310586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca5ba28b60bbcd%3A0x43bd4d43b4bdde68!2s25%20N%20300%20W%2C%20Washington%2C%20UT%2084780!5e0!3m2!1sen!2sus!4v1748964422831!5m2!1sen!2sus" width="300" height="200" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <!-- Center: Image and Contact Info -->
+          <div class="footer-image">
+            <img src="client/images/redrockLogo.png" alt="Red Rock Country Swing" />
+            <div class="footer-contact">
+              <div class="contact-info">
+                <div>
+                  <a href="tel:(801) 419-9644"> <i class="material-icons">phone</i> (801) 419-9644 </a>
+                </div>
+
+                <div>
+                  <a href="mailto:rrcountryswing@gmail.com"> <i class="material-icons">email</i> rrcountryswing@gmail.com </a>
+                </div>
+
+                <div>
+                  <a href="https://www.instagram.com/redrockcountryswing" target="_blank" style="font-style: italic"> <i class="fab fa-instagram"></i> @redrockcountryswing </a>
+                </div>
+
+                <div>
+                  <a href="https://www.facebook.com/p/Red-Rock-Country-Swing-100086722062194/" target="_blank" style="font-style: italic"> <i class="fab fa-facebook-f"></i> @Red Rock Country Swing </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Map -->
+          <div class="map">
+            <h3>St. George Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.0121009998397!2d-113.6096551234684!3d37.08101867216849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80ca457d0271b977%3A0xe56a8ebde8fa7019!2s1094%20W%201600%20S%2C%20St.%20George%2C%20UT%2084770!5e0!3m2!1sen!2sus!4v1745003339028!5m2!1sen!2sus" width="300" height="200" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </footer>
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const navbar = document.getElementById('navbar');
+
+      toggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');  // slide the menu panel
+        toggle.classList.toggle('open');    // morph burger ↔ X
+      });
+  </script>
+  <script src="../js/contact-form.js"></script>
+</body>
+</html>
