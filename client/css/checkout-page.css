@@ -1,4 +1,9 @@
 /* Global Styles */
+html,
+body {
+  max-width: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +15,7 @@
     line-height: 1.6;
     background-color: #f7f7f7;
     color: #333;
+    overflow-x: hidden;
   }
 
   .back-button {
@@ -39,7 +45,8 @@
     background-color: #fff;
     padding: 30px 15px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    max-width: 1100px;
+    margin: 80px auto 30px;
   }
   
   #membership-info h2 {
@@ -52,15 +59,25 @@
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    flex-wrap: wrap;
+    align-items: stretch;
   }
   
   .card {
     background-color: #f0f0f0;
     border-radius: 8px;
     padding: 20px;
-    width: 30%;
+    flex: 1 1 280px;
+    width: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card,
+  .step-card,
+  .payment-form-column,
+  .payment-summary-column {
+    min-width: 0;
   }
   
   .card:hover {
@@ -155,7 +172,7 @@
 
 #section-payment {
     max-width: 1100px;
-    margin: auto;
+  margin: 0 auto 40px;
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -178,6 +195,9 @@
     font-weight: 600;
     color: #1e293b;
     align-items: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .total-price {
@@ -252,7 +272,7 @@
 
 .payment-form-column {
     flex: 1;
-    min-width: 300px;
+  min-width: min(100%, 300px);
     max-width: 500px;
 }
 
@@ -323,29 +343,62 @@
 }
 
 @media screen and (max-width: 768px) {
+    #membership-info,
+    #section-info,
+    #section-payment {
+        width: calc(100% - 32px);
+        padding: 24px 18px;
+    }
+
     .payment-columns {
         flex-direction: column;
+        gap: 24px;
     }
 
     .payment-summary-column {
-        margin-top: 30px;
         width: 100%;
+        max-width: none;
     }
-}
 
-@media screen and (max-width: 600px) {
-    .payment-wrapper {
-        padding: 20px;
-    }
-}
-
-@media screen and (max-width: 768px) {
   .membership-cards {
     flex-direction: column;
     align-items: center;
   }
 
   .membership-cards .card {
-    width: 90%;
+    width: 100%;
+  }
+
+  .payment-action {
+    flex-direction: column;
+  }
+
+  .payment-action button {
+    width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+    .back-button {
+      top: 12px;
+      left: 12px;
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+
+    .payment-wrapper {
+        padding: 20px;
+    }
+
+    .card-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step-card,
+    .billing-info,
+    .card-info,
+    .payment-summary-column {
+      padding: 18px;
+    }
+  }

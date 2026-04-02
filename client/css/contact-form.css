@@ -5,6 +5,7 @@ body {
   padding: 0;
   background: #f9f9f9;
   color: #333;
+  overflow-x: hidden;
 }
 
 a {
@@ -79,8 +80,12 @@ a {
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   /* make sure the toggle sits on top of everything */
+  .nav-container {
+    padding: 0 3.5rem 0 0.5rem;
+  }
+
   .menu-toggle {
     display: flex;
     position: absolute;
@@ -282,9 +287,12 @@ main {
 
 .contact-info a {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.75rem;
   color: #333;
   font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
   transition: color 0.3s;
 }
 
@@ -307,12 +315,37 @@ main {
 
 .address-list a {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.75rem;
   font-style: italic;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
   transition: color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .contact-container {
+    gap: 2rem;
+    margin: 40px auto;
+    max-width: 760px;
+  }
+
+  .left-section,
+  .right-section {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .footer-container {
+    gap: 2rem;
+  }
+
+  .map {
+    min-width: min(100%, 320px);
+  }
 }
 
 .address-list a:hover {
