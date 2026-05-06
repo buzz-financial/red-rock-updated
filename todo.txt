@@ -1,0 +1,4 @@
+- fix invisible paths
+- add products
+- add checkouts
+- add subscriptions
